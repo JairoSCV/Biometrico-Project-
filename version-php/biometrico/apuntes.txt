@@ -1,0 +1,31 @@
+En: E:\xampp7.2.24\php\php.ini
+
+Busca esta línea (Ctrl + F):
+;extension=sockets
+
+y borrar ";"
+
+
+En caso de querer realizar este de un servicio permanente:
+1. Descargar NSSM, se obtiene la ruta de abajo
+	nssm-2.24/
+	├── win32/
+	│   └── nssm.exe
+	└── win64/
+	    └── nssm.exe
+2. Abrir CMD como Administrador y ejecutar:
+C:\ruta\a\la\carpeta\donde\se\descargo\nssm\nssm.exe install BiometricoZK
+
+3. Cuando se abre la ventana de NSSM:
+- Path: E:\xampp7.2.24\php\php.exe
+- Arguments: E:\xampp7.2.24\htdocs\inventario_\biometrico\biometrico_service.php (ruta hacia el script php)
+- Startup directory: E:\xampp7.2.24\htdocs\inventario_\biometrico
+
+4. Iniciar el servicio
+C:\ruta\a\la\carpeta\donde\se\descargo\nssm\nssm.exe start BiometricoZK
+
+5. Para detener el servicio
+C:\ruta\a\la\carpeta\donde\se\descargo\nssm\nssm.exe stop BiometricoZK
+
+6. Para eliminar el servicio
+C:\ruta\a\la\carpeta\donde\se\descargo\nssm\nssm.exe remove BiometricoZK
